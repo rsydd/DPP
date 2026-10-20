@@ -1,0 +1,667 @@
+[
+    {
+        "id": 1,
+        "name": "Aamon",
+        "role": "Assassin"
+    },
+    {
+        "id": 2,
+        "name": "Akai",
+        "role": "Tank"
+    },
+    {
+        "id": 3,
+        "name": "Aldous",
+        "role": "Fighter"
+    },
+    {
+        "id": 4,
+        "name": "Alice",
+        "role": "Mage"
+    },
+    {
+        "id": 5,
+        "name": "Alpha",
+        "role": "Fighter"
+    },
+    {
+        "id": 6,
+        "name": "Alucard",
+        "role": "Fighter"
+    },
+    {
+        "id": 7,
+        "name": "Angela",
+        "role": "Support"
+    },
+    {
+        "id": 8,
+        "name": "Argus",
+        "role": "Fighter"
+    },
+    {
+        "id": 9,
+        "name": "Arlott",
+        "role": "Fighter"
+    },
+    {
+        "id": 10,
+        "name": "Atlas",
+        "role": "Tank"
+    },
+    {
+        "id": 11,
+        "name": "Aulus",
+        "role": "Fighter"
+    },
+    {
+        "id": 12,
+        "name": "Aurora",
+        "role": "Mage"
+    },
+    {
+        "id": 13,
+        "name": "Badang",
+        "role": "Fighter"
+    },
+    {
+        "id": 14,
+        "name": "Balmond",
+        "role": "Fighter"
+    },
+    {
+        "id": 15,
+        "name": "Bane",
+        "role": "Fighter"
+    },
+    {
+        "id": 16,
+        "name": "Barats",
+        "role": "Tank"
+    },
+    {
+        "id": 17,
+        "name": "Baxia",
+        "role": "Tank"
+    },
+    {
+        "id": 18,
+        "name": "Beatrix",
+        "role": "Marksman"
+    },
+    {
+        "id": 19,
+        "name": "Belerick",
+        "role": "Tank"
+    },
+    {
+        "id": 20,
+        "name": "Benedetta",
+        "role": "Assassin"
+    },
+    {
+        "id": 21,
+        "name": "Brody",
+        "role": "Marksman"
+    },
+    {
+        "id": 22,
+        "name": "Bruno",
+        "role": "Marksman"
+    },
+    {
+        "id": 23,
+        "name": "Carmilla",
+        "role": "Support"
+    },
+    {
+        "id": 24,
+        "name": "Cecilion",
+        "role": "Mage"
+    },
+    {
+        "id": 25,
+        "name": "Chang'e",
+        "role": "Mage"
+    },
+    {
+        "id": 26,
+        "name": "Chip",
+        "role": "Support"
+    },
+    {
+        "id": 27,
+        "name": "Chou",
+        "role": "Fighter"
+    },
+    {
+        "id": 28,
+        "name": "Cici",
+        "role": "Fighter"
+    },
+    {
+        "id": 29,
+        "name": "Claude",
+        "role": "Marksman"
+    },
+    {
+        "id": 30,
+        "name": "Clint",
+        "role": "Marksman"
+    },
+    {
+        "id": 31,
+        "name": "Cyclops",
+        "role": "Mage"
+    },
+    {
+        "id": 32,
+        "name": "Diggie",
+        "role": "Support"
+    },
+    {
+        "id": 33,
+        "name": "Dyrroth",
+        "role": "Fighter"
+    },
+    {
+        "id": 34,
+        "name": "Edith",
+        "role": "Tank"
+    },
+    {
+        "id": 35,
+        "name": "Esmeralda",
+        "role": "Mage"
+    },
+    {
+        "id": 36,
+        "name": "Estes",
+        "role": "Support"
+    },
+    {
+        "id": 37,
+        "name": "Eudora",
+        "role": "Mage"
+    },
+    {
+        "id": 38,
+        "name": "Fanny",
+        "role": "Assassin"
+    },
+    {
+        "id": 39,
+        "name": "Faramis",
+        "role": "Support"
+    },
+    {
+        "id": 40,
+        "name": "Floryn",
+        "role": "Support"
+    },
+    {
+        "id": 41,
+        "name": "Franco",
+        "role": "Tank"
+    },
+    {
+        "id": 42,
+        "name": "Fredrinn",
+        "role": "Tank"
+    },
+    {
+        "id": 43,
+        "name": "Freya",
+        "role": "Fighter"
+    },
+    {
+        "id": 44,
+        "name": "Gatotkaca",
+        "role": "Tank"
+    },
+    {
+        "id": 45,
+        "name": "Gloo",
+        "role": "Tank"
+    },
+    {
+        "id": 46,
+        "name": "Gord",
+        "role": "Mage"
+    },
+    {
+        "id": 47,
+        "name": "Granger",
+        "role": "Marksman"
+    },
+    {
+        "id": 48,
+        "name": "Grock",
+        "role": "Tank"
+    },
+    {
+        "id": 49,
+        "name": "Guinevere",
+        "role": "Fighter"
+    },
+    {
+        "id": 50,
+        "name": "Gusion",
+        "role": "Assassin"
+    },
+    {
+        "id": 51,
+        "name": "Hanabi",
+        "role": "Marksman"
+    },
+    {
+        "id": 52,
+        "name": "Hanzo",
+        "role": "Assassin"
+    },
+    {
+        "id": 53,
+        "name": "Harith",
+        "role": "Mage"
+    },
+    {
+        "id": 54,
+        "name": "Harley",
+        "role": "Mage"
+    },
+    {
+        "id": 55,
+        "name": "Hayabusa",
+        "role": "Assassin"
+    },
+    {
+        "id": 56,
+        "name": "Helcurt",
+        "role": "Assassin"
+    },
+    {
+        "id": 57,
+        "name": "Hilda",
+        "role": "Fighter"
+    },
+    {
+        "id": 58,
+        "name": "Hylos",
+        "role": "Tank"
+    },
+    {
+        "id": 59,
+        "name": "Irithel",
+        "role": "Marksman"
+    },
+    {
+        "id": 60,
+        "name": "Ixia",
+        "role": "Marksman"
+    },
+    {
+        "id": 61,
+        "name": "Jawhead",
+        "role": "Fighter"
+    },
+    {
+        "id": 62,
+        "name": "Johnson",
+        "role": "Tank"
+    },
+    {
+        "id": 63,
+        "name": "Joy",
+        "role": "Assassin"
+    },
+    {
+        "id": 64,
+        "name": "Julian",
+        "role": "Fighter"
+    },
+    {
+        "id": 65,
+        "name": "Kadita",
+        "role": "Mage"
+    },
+    {
+        "id": 66,
+        "name": "Kagura",
+        "role": "Mage"
+    },
+    {
+        "id": 67,
+        "name": "Kaja",
+        "role": "Fighter"
+    },
+    {
+        "id": 68,
+        "name": "Kalea",
+        "role": "Support"
+    },
+    {
+        "id": 69,
+        "name": "Karina",
+        "role": "Assassin"
+    },
+    {
+        "id": 70,
+        "name": "Karrie",
+        "role": "Marksman"
+    },
+    {
+        "id": 71,
+        "name": "Khaleed",
+        "role": "Fighter"
+    },
+    {
+        "id": 72,
+        "name": "Khufra",
+        "role": "Tank"
+    },
+    {
+        "id": 73,
+        "name": "Kimmy",
+        "role": "Marksman"
+    },
+    {
+        "id": 74,
+        "name": "Lancelot",
+        "role": "Assassin"
+    },
+    {
+        "id": 75,
+        "name": "Lukas",
+        "role": "Fighter"
+    },
+    {
+        "id": 76,
+        "name": "Lapu-Lapu",
+        "role": "Fighter"
+    },
+    {
+        "id": 77,
+        "name": "Layla",
+        "role": "Marksman"
+    },
+    {
+        "id": 78,
+        "name": "Leomord",
+        "role": "Fighter"
+    },
+    {
+        "id": 79,
+        "name": "Lesley",
+        "role": "Marksman"
+    },
+    {
+        "id": 80,
+        "name": "Ling",
+        "role": "Assassin"
+    },
+    {
+        "id": 81,
+        "name": "Lolita",
+        "role": "Tank"
+    },
+    {
+        "id": 82,
+        "name": "Lunox",
+        "role": "Mage"
+    },
+    {
+        "id": 83,
+        "name": "Luo Yi",
+        "role": "Mage"
+    },
+    {
+        "id": 84,
+        "name": "Lylia",
+        "role": "Mage"
+    },
+    {
+        "id": 85,
+        "name": "Martis",
+        "role": "Fighter"
+    },
+    {
+        "id": 86,
+        "name": "Masha",
+        "role": "Fighter"
+    },
+    {
+        "id": 87,
+        "name": "Mathilda",
+        "role": "Support"
+    },
+    {
+        "id": 88,
+        "name": "Melissa",
+        "role": "Marksman"
+    },
+    {
+        "id": 89,
+        "name": "Minotaur",
+        "role": "Tank"
+    },
+    {
+        "id": 90,
+        "name": "Minsitthar",
+        "role": "Fighter"
+    },
+    {
+        "id": 91,
+        "name": "Miya",
+        "role": "Marksman"
+    },
+    {
+        "id": 92,
+        "name": "Moskov",
+        "role": "Marksman"
+    },
+    {
+        "id": 93,
+        "name": "Nana",
+        "role": "Mage"
+    },
+    {
+        "id": 94,
+        "name": "Natalia",
+        "role": "Assassin"
+    },
+    {
+        "id": 95,
+        "name": "Natan",
+        "role": "Marksman"
+    },
+    {
+        "id": 96,
+        "name": "Nolan",
+        "role": "Assassin"
+    },
+    {
+        "id": 97,
+        "name": "Novaria",
+        "role": "Mage"
+    },
+    {
+        "id": 98,
+        "name": "Obsidia",
+        "role": "Mage"
+    },
+    {
+        "id": 99,
+        "name": "Odette",
+        "role": "Mage"
+    },
+    {
+        "id": 100,
+        "name": "Paquito",
+        "role": "Fighter"
+    },
+    {
+        "id": 101,
+        "name": "Pharsa",
+        "role": "Mage"
+    },
+    {
+        "id": 102,
+        "name": "Phoveus",
+        "role": "Fighter"
+    },
+    {
+        "id": 103,
+        "name": "Popol and Kupa",
+        "role": "Marksman"
+    },
+    {
+        "id": 104,
+        "name": "Rafaela",
+        "role": "Support"
+    },
+    {
+        "id": 105,
+        "name": "Roger",
+        "role": "Fighter"
+    },
+    {
+        "id": 106,
+        "name": "Ruby",
+        "role": "Fighter"
+    },
+    {
+        "id": 107,
+        "name": "Saber",
+        "role": "Assassin"
+    },
+    {
+        "id": 108,
+        "name": "Selena",
+        "role": "Assassin"
+    },
+    {
+        "id": 109,
+        "name": "Silvanna",
+        "role": "Fighter"
+    },
+    {
+        "id": 110,
+        "name": "Sun",
+        "role": "Fighter"
+    },
+    {
+        "id": 111,
+        "name": "Suyou",
+        "role": "Assassin"
+    },
+    {
+        "id": 112,
+        "name": "Terizla",
+        "role": "Fighter"
+    },
+    {
+        "id": 113,
+        "name": "Thamuz",
+        "role": "Fighter"
+    },
+    {
+        "id": 114,
+        "name": "Tigreal",
+        "role": "Tank"
+    },
+    {
+        "id": 115,
+        "name": "Uranus",
+        "role": "Tank"
+    },
+    {
+        "id": 116,
+        "name": "Vale",
+        "role": "Mage"
+    },
+    {
+        "id": 117,
+        "name": "Valentina",
+        "role": "Mage"
+    },
+    {
+        "id": 118,
+        "name": "Valir",
+        "role": "Mage"
+    },
+    {
+        "id": 119,
+        "name": "Vexana",
+        "role": "Mage"
+    },
+    {
+        "id": 120,
+        "name": "Wanwan",
+        "role": "Marksman"
+    },
+    {
+        "id": 121,
+        "name": "Xavier",
+        "role": "Mage"
+    },
+    {
+        "id": 122,
+        "name": "X.Borg",
+        "role": "Fighter"
+    },
+    {
+        "id": 123,
+        "name": "Yin",
+        "role": "Fighter"
+    },
+    {
+        "id": 124,
+        "name": "Yi Sun-shin",
+        "role": "Assassin"
+    },
+    {
+        "id": 125,
+        "name": "Yu Zhong",
+        "role": "Fighter"
+    },
+    {
+        "id": 126,
+        "name": "Yve",
+        "role": "Mage"
+    },
+    {
+        "id": 127,
+        "name": "Zhask",
+        "role": "Mage"
+    },
+    {
+        "id": 128,
+        "name": "Zhuxin",
+        "role": "Mage"
+    },
+    {
+        "id": 129,
+        "name": "Zilong",
+        "role": "Fighter"
+    },
+    {
+        "id": 130,
+        "name": "Zetian",
+        "role": "Mage"
+    },
+    {
+        "id": 131,
+        "name": "Sora",
+        "role": "Assassin"
+    },
+    {
+        "id": 132,
+        "name": "Marcel",
+        "role": "Fighter"
+    },
+    {
+        "id": 133,
+        "name": "Hirara",
+        "role": "Support"
+    }
+]
