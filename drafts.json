@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "name": "My First Draft",
+    "createdAt": "2026-10-22T12:39:22.781Z",
+    "teams": {
+      "Blue": [
+        {
+          "heroId": 128,
+          "heroName": "Zhuxin",
+          "role": "Mage",
+          "lanes": [
+            "Mid"
+          ]
+        },
+        {
+          "heroId": 129,
+          "heroName": "Zilong",
+          "role": "Fighter",
+          "lanes": [
+            "EXP",
+            "Jungle"
+          ]
+        },
+        {
+          "heroId": 133,
+          "heroName": "Hirara",
+          "role": "Support",
+          "lanes": [
+            "Roam"
+          ]
+        },
+        {
+          "heroId": 131,
+          "heroName": "Sora",
+          "role": "Assassin",
+          "lanes": [
+            "Jungle"
+          ]
+        },
+        {
+          "heroId": 47,
+          "heroName": "Granger",
+          "role": "Marksman",
+          "lanes": [
+            "Gold"
+          ]
+        }
+      ],
+      "Red": [
+        {
+          "heroId": 127,
+          "heroName": "Zhask",
+          "role": "Mage",
+          "lanes": [
+            "Mid"
+          ]
+        },
+        {
+          "heroId": 113,
+          "heroName": "Thamuz",
+          "role": "Fighter",
+          "lanes": [
+            "EXP",
+            "Jungle"
+          ]
+        },
+        {
+          "heroId": 68,
+          "heroName": "Kalea",
+          "role": "Support",
+          "lanes": [
+            "Roam"
+          ]
+        },
+        {
+          "heroId": 1,
+          "heroName": "Aamon",
+          "role": "Assassin",
+          "lanes": [
+            "Jungle"
+          ]
+        },
+        {
+          "heroId": 120,
+          "heroName": "Wanwan",
+          "role": "Marksman",
+          "lanes": [
+            "Gold"
+          ]
+        }
+      ]
+    }
+  }
+]

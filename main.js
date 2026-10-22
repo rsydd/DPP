@@ -19,7 +19,7 @@ function pause() {
   return ask("Tekan enter untuk kembali ke menu...");
 }
 
-function printHeroes(heroes = heroesApi.allHeroes()) {
+function printHeroes(heroes = heroesApi.allHeroes() ?? []) {
   if (!heroes.length) return console.log("Belum ada data hero.");
   console.log("\nID | Nama                 | Role       | Lane");
   console.log("-".repeat(65));
@@ -38,10 +38,10 @@ function printHeroDetails(hero) {
 }
 
 async function getHeroInput(existing = {}) {
-  const name = await ask(`Nama hero ${existing.name ? ` [${existing.name}]` : ""}: `) || existing.name || "";
-  const roleText = await ask(`Role (${heroesApi.ROLES.join("/ ")})${existing.role ? ` [${existing.role}]` : ""}: `);
+  const name = await ask(`Nama hero${existing.name ? ` [${existing.name}]` : ""}: `) || existing.name || "";
+  const roleText = await ask(`Role (${heroesApi.ROLES.join(" / ")})${existing.role ? ` [${existing.role}]` : ""}: `);
   const role = roleText || existing.role || "";
-  const laneText = await ask(`Lane dipisah koma  (${heroesApi.LANES.join(", ")})${existing.lanes ? ` [${existing.lanes.join(", ")}]` : ""}: `);
+  const laneText = await ask(`Lane dipisah koma (${heroesApi.LANES.join(", ")})${existing.lanes ? ` [${existing.lanes.join(", ")}]` : ""}: `);
   const lanes = (laneText || (existing.lanes || []).join(",")).split(",").map(s => s.trim()).filter(Boolean);
   return { name, role, lanes };
 }
@@ -55,7 +55,7 @@ async function heroMenu() {
     console.log("4. Ubah hero");
     console.log("5. Hapus hero");
     console.log("0. Kembali");
-    const choice = (await ask("Pilih: ")).trim();
+    const choice = await ask("Pilih: ");
 
     switch (choice) {
       case "1": {
@@ -66,7 +66,7 @@ async function heroMenu() {
       case "2": {
         const query = (await ask("Cari nama hero: ")).toLowerCase();
         printHeroes(
-          heroesApi.allHeroes().filter(h => h.name.toLowerCase().includes(query))
+          (heroesApi.allHeroes() ?? []).filter(h => h.name.toLowerCase().includes(query))
         );
         await pause();
         break;
@@ -126,25 +126,28 @@ async function heroMenu() {
 function printDraft(draft) {
   console.log(`\nDraft #${draft.id}: ${draft.name}`);
   for (const [key, label] of [["Blue", "Tim Sendiri"], ["Red", "Tim Lawan"]]) {
-    console.log(`\n${label} (${draft.teams[key].length}/5)`);
-    if (!draft.teams[key].length) console.log(" (belum ada pick)");
-    draft.teams[key].forEach((pick, i) => {
-      console.log(` ${i + 1}.${pick.heroName} - ${pick.role} [${pick.lanes.join(", ")}]`);
+    const team = draft.teams?.[key] ?? [];
+    console.log(`\n${label} (${team.length}/5)`);
+    if (!team.length) console.log(" (belum ada pick)");
+    team.forEach((pick, i) => {
+      console.log(` ${i + 1}. ${pick.heroName} - ${pick.role} [${(pick.lanes || []).join(", ")}]`);
     });
-    const validation = draftApi.validateTeam(draft.teams[key]);
-    console.log(` Lane belum terisi: ${validation.missingLanes.join(",  ") || "tidak ada"}`);
+    const validation = draftApi.validateTeam(team) ?? {};
+    console.log(` Lane belum terisi: ${(validation.missingLanes ?? []).join(", ") || "tidak ada"}`);
   }
 }
 
 async function chooseDraft() {
-  const drafts = draftApi.allDrafts();
+  const drafts = draftApi.allDrafts() ?? [];
   if (!drafts.length) {
     console.log("Belum ada draft, buat draft terlebih dahulu.");
     return null;
   }
-  drafts.forEach(d => console.log(`${d.id}.${d.name} (${d.teams.Blue.length}/5 vs ${d.teams.Red.length}/5)`));
+  drafts.forEach(d =>
+    console.log(`${d.id}. ${d.name} (${d.teams?.Blue?.length ?? 0}/5 vs ${d.teams?.Red?.length ?? 0}/5)`)
+  );
   const id = await askNumber("ID draft: ");
-  const draft = id && draftApi.findDraft(id);
+  const draft = id ? draftApi.findDraft(id) : null;
   if (!draft) console.log("Draft tidak ditemukan.");
   return draft || null;
 }
@@ -181,8 +184,12 @@ async function manageDraft(draftId) {
       case "2": {
         const teamInput = await ask("Tim (1 = sendiri, 2 = lawan): ");
         const teamKey = teamInput === "1" ? "Blue" : teamInput === "2" ? "Red" : null;
+        if (!teamKey) {
+          console.log("Pilihan tim tidak valid.");
+          break;
+        }
         const heroId = await askNumber("ID hero yang dihapus dari draft: ");
-        if (!teamKey || !heroId) console.log("Input tidak valid.");
+        if (!heroId) console.log("ID tidak valid.");
         else {
           const result = draftApi.removePick(draft.id, teamKey, heroId);
           console.log(result.ok ? "Pick dihapus." : result.message);
@@ -191,10 +198,11 @@ async function manageDraft(draftId) {
       }
       case "3": {
         for (const [key, label] of [["Blue", "Tim sendiri"], ["Red", "Tim lawan"]]) {
-          const v = draftApi.validateTeam(draft.teams[key]);
-          console.log(`\n${label}: ${v.count}/5 hero`);
-          console.log(`Lane belum terisi: ${v.missingLanes.join(", ") || "tidak ada"}`);
-          if (v.unassigned.length) console.log(`Hero bentrok lane: ${v.unassigned.join(", ")}`);
+          const team = draft.teams?.[key] ?? [];
+          const v = draftApi.validateTeam(team) ?? {};
+          console.log(`\n${label}: ${v.count ?? team.length}/5 hero`);
+          console.log(`Lane belum terisi: ${(v.missingLanes ?? []).join(", ") || "tidak ada"}`);
+          if ((v.unassigned ?? []).length) console.log(`Hero bentrok lane: ${v.unassigned.join(", ")}`);
           console.log(v.validCount ? "Komposisi lengkap." : "Komposisi belum lengkap atau ada lane yang bentrok.");
         }
         await pause();
@@ -221,7 +229,7 @@ async function draftMenu() {
 
     switch (choice) {
       case "1": {
-        const drafts = draftApi.allDrafts();
+        const drafts = draftApi.allDrafts() ?? [];
         if (!drafts.length) console.log("Belum ada draft.");
         else drafts.forEach(d => printDraft(d));
         await pause();
@@ -288,10 +296,11 @@ async function main() {
     if (choice === "1") await heroMenu();
     else if (choice === "2") await draftMenu();
     else if (choice === "3") {
-      const drafts = draftApi.allDrafts();
-      console.log(`Jumlah hero : ${heroesApi.allHeroes().length}`);
+      const heroes = heroesApi.allHeroes() ?? [];
+      const drafts = draftApi.allDrafts() ?? [];
+      console.log(`Jumlah hero : ${heroes.length}`);
       console.log(`Jumlah draft: ${drafts.length}`);
-      console.log(`Hero tersedia: ${heroesApi.allHeroes().map(h => h.name).join(", ")}`);
+      console.log(`Hero tersedia: ${heroes.map(h => h.name).join(", ")}`);
       await pause();
     } else if (choice === "0") break;
     else console.log("Pilihan tidak valid.");
@@ -301,7 +310,7 @@ async function main() {
 }
 
 main().catch(error => {
-  console.error("Terjadi kesalahan:", error.message);
+  console.error("Terjadi kesalahan:", error.stack);
   rl.close();
   process.exitCode = 1;
 });

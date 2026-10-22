@@ -24,7 +24,7 @@ function createDraft(name) {
     id: nextDraftId(drafts),
     name: cleanName,
     createdAt: new Date().toISOString(),
-    teams: { ours: [], enemy: [] }
+    teams: { Blue: [], Red: [] }
   };
   drafts.push(draft);
   saveDrafts(drafts);
@@ -69,7 +69,7 @@ function addPick(draftId, teamKey, heroId) {
 
 function removePick(draftId, teamKey, heroId) {
   const drafts = allDrafts();
-  const draft = drafts.find(d => d.id === Number(id));
+  const draft = drafts.find(d => d.id === Number(draftId));
   if (!draft) return { ok: false, message: "Draft tidak ditemukan." }
   if (!["Blue", "Red"].includes(teamKey)) {
     return { ok: false, message: "Tim tidak valid." };
@@ -109,7 +109,7 @@ function validateTeam(picks) {
 
   for (const pick of picks) {
     const hero = findHeroById(pick.heroId);
-    const lane = hero?.lanes || pick.lanes || [];
+    const lanes = hero?.lanes || pick.lanes || [];
     const availLane = lanes.find(lane => REQUIRED_LANES.includes(lane) && !usedLanes.has(lane));
     if (availLane) usedLanes.add(availLane);
     else unassigned.push(pick.heroName);
@@ -127,5 +127,5 @@ function validateTeam(picks) {
 
 module.exports = {
   allDrafts, findDraft, createDraft, addPick, removePick,
-  updateDraftName, deleteDraft, validateTeam, getDraftAnalysis, REQUIRED_LANES
+  updateDraftName, deleteDraft, validateTeam, REQUIRED_LANES
 };
